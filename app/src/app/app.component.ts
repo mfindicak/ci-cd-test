@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('http://localhost:3000').subscribe((res: any) => {
+    this.http.get('/api').subscribe((res: any) => {
       this.title = res.message;
     });
   }
