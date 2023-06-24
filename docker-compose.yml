@@ -1,0 +1,22 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./api  # Path to the backend application directory
+      dockerfile: Dockerfile  # Name of the Dockerfile for the backend
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./app  # Path to the frontend application directory
+      dockerfile: Dockerfile  # Name of the Dockerfile for the frontend
+    ports:
+      - 80:80
+    networks:
+      - app-network
+
+networks:
+  app-network:
